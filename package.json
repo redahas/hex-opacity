@@ -1,6 +1,6 @@
 {
   "name": "hex-opacity",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple module for adding opacity to hexidecimal colour codes",
   "main": "index.js",
   "repository": "git@github.com:redahas/hex-opacity.git",
