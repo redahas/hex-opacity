@@ -6,10 +6,26 @@
   "repository": "git@github.com:redahas/hex-opacity.git",
   "author": "redahas <seanredahan@gmail.com>",
   "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-node ./src/__tests__/test.js",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
   "dependencies": {
+    "@types/node": "^11.10.5",
     "pad": "^2.2.2"
   },
   "devDependencies": {
-    "tape": "^4.10.1"
+    "@types/tape": "^4.2.33",
+    "prettier": "^1.16.4",
+    "tape": "^4.10.1",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333"
   }
 }

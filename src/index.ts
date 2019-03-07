@@ -2,35 +2,23 @@ const pad = require('pad');
 
 /**
  * Converts a float between 0 and 1 to rounded base 16 value
- * 
- * @param {number} float - A floating point value between 0 and 1
- * @returns {string}
  */
-const floatToHex = float => Math.round(float * 255).toString(16);
+const floatToHex = (float: number): string => Math.round(float * 255).toString(16);
 
 /**
  * Pads strings with 0 on the left
- * 
- * @param {string} hex
- * @returns {string}
  */
-const padHex = hex => pad(2, hex, '0');
+const padHex = (hex: string): string => pad(2, hex, '0');
 
 /**
  * Checks that input is a valid hex colour code
- * 
- * @param {string} str 
- * @returns {string}
  */
-const isValidHex = str => !!str.match(/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i);
+const isValidHex = (str: string): boolean => !!str.match(/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i);
 
 /**
  * Converts a 3 character hex code to 6 characters for consistency
- * 
- * @param {string} hex 
- * @returns {string}
  */
-const formatColourHex = hex => {
+const formatColourHex = (hex: string): string => {
   const colour = hex.substr(1);
 
   if (colour.length === 6) return colour;
@@ -40,12 +28,11 @@ const formatColourHex = hex => {
 
 /**
  * Prepares colour and opacity hex values separately
- * 
- * @param {string} hex - The hexidecimal colour code you wish to add opacity to
- * @param {number} opacity - A floating point value between 0 and 1
- * @returns {object}
  */
-const prepareHexPartials = (hex, opacity) => {
+const prepareHexPartials = (hex: string, opacity: number): {
+  colour: string,
+  opacity: string
+} => {
   if (isValidHex(hex)) {
     const colourHex = formatColourHex(hex);
     const opacityHex = padHex(floatToHex(opacity));
@@ -61,12 +48,8 @@ const prepareHexPartials = (hex, opacity) => {
 
 /**
  * Add opacity to a hexidecimal colour code in #RRGGBBAA format
- * 
- * @param {string} hex - The hexidecimal colour code you wish to add opacity to
- * @param {number} opacity - A floating point value between 0 and 1
- * @returns {string}
  */
-const add = (hex = '', opacity) => {
+const add = (hex: string = '', opacity: number): string => {
   let result = hex;
 
   if (opacity) {
@@ -79,12 +62,8 @@ const add = (hex = '', opacity) => {
 
 /**
  * Add opacity to a hexidecimal colour code in #AARRGGBB format (ie: Android)
- * 
- * @param {string} hex - The hexidecimal colour code you wish to add opacity to
- * @param {number} opacity - A floating point value between 0 and 1
- * @returns {string}
  */
-const androidAdd = (hex = '', opacity) => {
+const androidAdd = (hex: string = '', opacity: number): string => {
   let result = hex;
 
   if (opacity) {

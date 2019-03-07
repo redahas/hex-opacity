@@ -1,5 +1,5 @@
 const test = require('tape');
-const hexOpacity = require('./index');
+const hexOpacity = require('../index.ts');
 
 test('hexOpacity.add', (t) => {
   t.plan(5)
