@@ -53,11 +53,4 @@ const hexWithOpacity = hexOpacity.androidAdd('#1144b2', .3); // Result = '#4D114
 ```
 
 
-## Unit-Tests:
-
-If you need to run the module unit tests, just use your terminal to navigate into the module directory and run:
-
-`node test.js`
-
-
 Enjoy! ( ಠ ͜ʖ ಠ)
