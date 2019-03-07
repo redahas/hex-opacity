@@ -53,4 +53,4 @@ const hexWithOpacity = hexOpacity.androidAdd('#1144b2', .3); // Result = '#4D114
 ```
 
 
-Enjoy! ( ಠ ͜ʖ ಠ)
+Enjoy! (☉ ‿ ⚆)
