@@ -48,4 +48,4 @@ const hexWithOpacity = hexOpacity.create('#1144b2', .3, true); // Result = '#4D1
 ```
 
 
-Enjoy! ( ಠ ͜ʖ ಠ)
+Enjoy! (☉ ‿ ⚆)
