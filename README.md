@@ -26,22 +26,10 @@ CJS: `const hexOpacity = require('hex-opacity');`
 
 There are only two API methods to add opacity to hex colours using #RRGGBBAA or #AARRGGBB formats.
 
-### add (hex, opacity)
+### create (hex, opacity)
 
-The add function adds opacity to hex format supported by modern web browers (#RRGGBBAA).
-
-Just pass in your full initial hex colour code and a floating point opacity value between 0 and 1 (just as you would with CSS)
-
-Example:
-```
-import hexOpacity from 'hex-opacity';
-
-const hexWithOpacity = hexOpacity.add('#1144b2', .3); // Result = '#1144B24D'
-```
-
-### androidAdd (hex, opacity)
-
-The add function adds opacity to hex format supported by modern web browers (#AARRGGBB).
+The create function creates a  hex format colour value with opacity.
+The default format is that supported by modern web browers (#RRGGBBAA) however passing in the `prepend` flag will resolve to a different format for use in Anroid environments (#AARRGGBB).
 
 Just pass in your full initial hex colour code and a floating point opacity value between 0 and 1 (just as you would with CSS)
 
@@ -49,7 +37,14 @@ Example:
 ```
 import hexOpacity from 'hex-opacity';
 
-const hexWithOpacity = hexOpacity.androidAdd('#1144b2', .3); // Result = '#4D1144B2'
+const hexWithOpacity = hexOpacity.create('#1144b2', .3); // Result = '#1144B24D'
+```
+
+Example:
+```
+import hexOpacity from 'hex-opacity';
+
+const hexWithOpacity = hexOpacity.create('#1144b2', .3, true); // Result = '#4D1144B2'
 ```
 
 
