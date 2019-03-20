@@ -1,22 +1,22 @@
 const test = require('tape');
 const hexOpacity = require('../index.ts');
 
-test('hexOpacity.add', (t) => {
+test('hexOpacity.create', (t) => {
   t.plan(5)
 
-  t.equal(hexOpacity.add('#fff'), '#FFF');
-  t.equal(hexOpacity.add('#fffFFF'), '#FFFFFF');
-  t.equal(hexOpacity.add('#000', 0.5), '#00000080');
-  t.equal(hexOpacity.add('#1144b2', .3), '#1144B24D');
-  t.equal(hexOpacity.add('#bbc867', 0.05), '#BBC8670D');
+  t.equal(hexOpacity.create('#fff'), '#FFFFFFFF');
+  t.equal(hexOpacity.create('#fffFFF'), '#FFFFFFFF');
+  t.equal(hexOpacity.create('#000', 0.5), '#00000080');
+  t.equal(hexOpacity.create('#1144b2', .3), '#1144B24D');
+  t.equal(hexOpacity.create('#bbc867', 0.05), '#BBC8670D');
 });
 
-test('hexOpacity.androidAdd', (t) => {
+test('hexOpacity.create for Android', (t) => {
   t.plan(5)
 
-  t.equal(hexOpacity.androidAdd('#fff'), '#FFF');
-  t.equal(hexOpacity.androidAdd('#fffFFF'), '#FFFFFF');
-  t.equal(hexOpacity.androidAdd('#000', 0.5), '#80000000');
-  t.equal(hexOpacity.androidAdd('#1144b2', .3), '#4D1144B2');
-  t.equal(hexOpacity.androidAdd('#bbc867', 0.05), '#0DBBC867');
+  t.equal(hexOpacity.create('#fff', undefined, true), '#FFFFFFFF');
+  t.equal(hexOpacity.create('#fffFFF', undefined, true), '#FFFFFFFF');
+  t.equal(hexOpacity.create('#000', 0.5, true), '#80000000');
+  t.equal(hexOpacity.create('#1144b2', .3, true), '#4D1144B2');
+  t.equal(hexOpacity.create('#bbc867', 0.05, true), '#0DBBC867');
 });

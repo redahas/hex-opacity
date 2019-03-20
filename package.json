@@ -9,6 +9,18 @@
   "files": [
     "lib/**/*"
   ],
+  "keywords": [
+    "css",
+    "js",
+    "node",
+    "color",
+    "style",
+    "nodejs",
+    "opacity",
+    "javascript",
+    "hexidecimal color",
+    "hex opacity"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "ts-node ./src/__tests__/test.js",

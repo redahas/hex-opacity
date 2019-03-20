@@ -29,7 +29,7 @@ const formatColourHex = (hex: string): string => {
 /**
  * Prepares colour and opacity hex values separately
  */
-const prepareHexPartials = (hex: string, opacity: number): {
+const prepareComponents = (hex: string, opacity: number): {
   colour: string,
   opacity: string
 } => {
@@ -46,36 +46,27 @@ const prepareHexPartials = (hex: string, opacity: number): {
   }
 }
 
+interface IHexComponents {
+  colour: string;
+  opacity: string;
+}
+
 /**
  * Add opacity to a hexidecimal colour code in #RRGGBBAA format
  */
-const add = (hex: string = '', opacity: number): string => {
-  let result = hex;
-
-  if (opacity) {
-    const { colour: cHex, opacity: oHex } = prepareHexPartials(hex, opacity);
-    result = `#${cHex}${oHex}`;
-  }
-  
-  return result.toUpperCase();
-};
+const appendHexOpacity = ({ opacity, colour }: IHexComponents ): string => `#${colour}${opacity}`;
 
 /**
  * Add opacity to a hexidecimal colour code in #AARRGGBB format (ie: Android)
  */
-const androidAdd = (hex: string = '', opacity: number): string => {
-  let result = hex;
+const prependHexOpacity = ({ opacity, colour }: IHexComponents ): string => `#${opacity}${colour}`;
 
-  if (opacity) {
-    const { colour: cHex, opacity: oHex } = prepareHexPartials(hex, opacity);
-    result = `#${oHex}${cHex}`;
-  }
+const create = (hex: string = '', opacity = 1, prepend = false): string => {
+  const hexComponents = prepareComponents(hex, opacity);
+  const result = (prepend ? prependHexOpacity : appendHexOpacity)(hexComponents);
 
   return result.toUpperCase();
-}
-
-module.exports = {
-  add,
-  androidAdd,
 };
+
+module.exports = { create };
 
