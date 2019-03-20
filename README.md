@@ -24,9 +24,9 @@ CJS: `const hexOpacity = require('hex-opacity');`
 
 ## API:
 
-There are only two API methods to add opacity to hex colours using #RRGGBBAA or #AARRGGBB formats.
+There is one simple API method to add opacity to hex colours, with a configurable output for #RRGGBBAA (default) or #AARRGGBB (using `prepend` flag parameter) formats.
 
-### create (hex, opacity)
+### create (hex: string, opacity: string, prepend: boolean)
 
 The create function creates a  hex format colour value with opacity.
 The default format is that supported by modern web browers (#RRGGBBAA) however passing in the `prepend` flag will resolve to a different format for use in Anroid environments (#AARRGGBB).
