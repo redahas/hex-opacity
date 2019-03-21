@@ -26,25 +26,24 @@ CJS: `const hexOpacity = require('hex-opacity');`
 
 There is one simple API method to add opacity to hex colours, with a configurable output for #RRGGBBAA (default) or #AARRGGBB (using `prepend` flag parameter) formats.
 
-### create (hex: string, opacity: string, prepend: boolean)
+### create (hex, opacity, prepend)
+
+| Parameter   | Type        | Default value |
+| ----------- | ----------- | ------------- |
+| hex         | string      | false         |
+| opacity     | number      | 1             |
+| prepend     | boolean     | false         |
 
 The create function creates a  hex format colour value with opacity.
 The default format is that supported by modern web browers (#RRGGBBAA) however passing in the `prepend` flag will resolve to a different format for use in Anroid environments (#AARRGGBB).
 
 Just pass in your full initial hex colour code and a floating point opacity value between 0 and 1 (just as you would with CSS)
 
-Example:
+Usage:
 ```
-import hexOpacity from 'hex-opacity';
-
-const hexWithOpacity = hexOpacity.create('#1144b2', .3); // Result = '#1144B24D'
-```
-
-Example:
-```
-import hexOpacity from 'hex-opacity';
-
-const hexWithOpacity = hexOpacity.create('#1144b2', .3, true); // Result = '#4D1144B2'
+hexOpacity.create('#fff'); // Result = '#FFFFFFFF'
+hexOpacity.create('#1144b2', .3); // Result = '#1144B24D'
+hexOpacity.create('#1144b2', .3, true); // Result = '#4D1144B2'
 ```
 
 
