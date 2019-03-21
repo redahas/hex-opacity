@@ -9,6 +9,9 @@ before_install:
 script:
   - docker run sredahan/hex-opacity npm run test -- --coverage
 
+before_deploy:
+  - yarn run build
+
 deploy:
   provider: npm
   email: $NPM_EMAIL
