@@ -24,14 +24,17 @@ const formatColourHex = (hex: string): string => {
   if (colour.length === 6) return colour;
 
   return `${colour[0].repeat(2)}${colour[1].repeat(2)}${colour[2].repeat(2)}`;
-}
+};
 
 /**
  * Prepares colour and opacity hex values separately
  */
-const prepareComponents = (hex: string, opacity: number): {
-  colour: string,
-  opacity: string
+const prepareComponents = (
+  hex: string,
+  opacity: number,
+): {
+  colour: string;
+  opacity: string;
 } => {
   if (isValidHex(hex)) {
     const colourHex = formatColourHex(hex);
@@ -44,7 +47,7 @@ const prepareComponents = (hex: string, opacity: number): {
   } else {
     throw new Error('Input not a recognised hexidecimal value');
   }
-}
+};
 
 interface IHexComponents {
   colour: string;
@@ -54,12 +57,12 @@ interface IHexComponents {
 /**
  * Add opacity to a hexidecimal colour code in #RRGGBBAA format
  */
-const appendHexOpacity = ({ opacity, colour }: IHexComponents ): string => `#${colour}${opacity}`;
+const appendHexOpacity = ({ opacity, colour }: IHexComponents): string => `#${colour}${opacity}`;
 
 /**
  * Add opacity to a hexidecimal colour code in #AARRGGBB format (ie: Android)
  */
-const prependHexOpacity = ({ opacity, colour }: IHexComponents ): string => `#${opacity}${colour}`;
+const prependHexOpacity = ({ opacity, colour }: IHexComponents): string => `#${opacity}${colour}`;
 
 const create = (hex: string = '', opacity = 1, prepend = false): string => {
   const hexComponents = prepareComponents(hex, opacity);
@@ -69,4 +72,3 @@ const create = (hex: string = '', opacity = 1, prepend = false): string => {
 };
 
 module.exports = { create };
-
