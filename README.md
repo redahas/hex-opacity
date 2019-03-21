@@ -30,7 +30,7 @@ There is one simple API method to add opacity to hex colours, with a configurabl
 
 | Parameter   | Type        | Default value |
 | ----------- | ----------- | ------------- |
-| hex         | string      | false         |
+| hex         | string      | ''            |
 | opacity     | number      | 1             |
 | prepend     | boolean     | false         |
 
