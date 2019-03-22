@@ -1,14 +1,13 @@
 sudo: required
 language: node_js
+cache: yarn
+install: yarn
 services:
   - docker
-
 before_install:
   - docker build -t sredahan/hex-opacity -f Dockerfile.dev .
-
 script:
   - docker run sredahan/hex-opacity npm run test -- --coverage
-
 jobs:
   include:
     - stage: npm release
@@ -24,4 +23,3 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
-
