@@ -9,10 +9,19 @@ before_install:
 script:
   - docker run sredahan/hex-opacity npm run test -- --coverage
 
-before_deploy:
-  - yarn run build
+jobs:
+  include:
+    - stage: npm release
+      if: tag IS present
+      node_js: "8"
+      script: yarn run build
+      before_deploy:
+        - cd lib
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_KEY
+        skip_cleanup: true
+        on:
+          tags: true
 
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_KEY
