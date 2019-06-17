@@ -1,6 +1,6 @@
 {
   "name": "hex-opacity",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Simple module for adding opacity to hexidecimal colour codes",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
