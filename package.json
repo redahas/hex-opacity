@@ -1,9 +1,9 @@
 {
   "name": "hex-opacity",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Simple module for adding opacity to hexidecimal colour codes",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "repository": "git@github.com:redahas/hex-opacity.git",
   "author": "redahas <seanredahan@gmail.com>",
   "license": "MIT",
