@@ -64,11 +64,11 @@ const appendHexOpacity = ({ opacity, colour }: IHexComponents): string => `#${co
  */
 const prependHexOpacity = ({ opacity, colour }: IHexComponents): string => `#${opacity}${colour}`;
 
-const create = (hex: string = '', opacity = 1, prepend = false): string => {
+export const create = (hex: string = '', opacity = 1, prepend = false): string => {
   const hexComponents = prepareComponents(hex, opacity);
   const result = (prepend ? prependHexOpacity : appendHexOpacity)(hexComponents);
 
   return result.toUpperCase();
 };
 
-module.exports = { create };
+export default create;

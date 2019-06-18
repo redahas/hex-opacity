@@ -29,7 +29,10 @@
     "build": "tsc",
     "test": "ts-node ./src/__tests__/test.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "patch": "npm version patch -m 'Bump to version %s'",
+    "minor": "npm version minor -m 'Bump to version %s'",
+    "major": "npm version major -m 'Bump to version %s'"
   },
   "dependencies": {
     "@types/node": "^11.10.5",
