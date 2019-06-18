@@ -28,6 +28,10 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redahas/hex-opacity.git"
+  },
   "dependencies": {
     "@types/node": "^11.10.5",
     "pad": "^2.2.2"
