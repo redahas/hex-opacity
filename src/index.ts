@@ -71,4 +71,4 @@ export const create = (hex: string = '', opacity = 1, prepend = false): string =
   return result.toUpperCase();
 };
 
-export default create;
+export default { create };
